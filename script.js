@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("click_to_record").addEventListener('click', function() {
         window.SpeechRecognition = window.webkitSpeechRecognition;
         const recognition = new SpeechRecognition();
-        recognition.lang = 'en-US, pt-PT';
+        recognition.lang = 'pt-PT, en-EN';
 
         recognition.interimResults = true;
 
         const recordingImg = document.getElementById("click_to_record");
-        recordingImg.src = "assets/recording.svg";
+        recordingImg.setAttribute("fill", "red");
 
         recognition.addEventListener('result', e => {
             const transcript = Array.from(e.results)
@@ -40,17 +40,44 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         recognition.addEventListener('end', () => {
-            recordingImg.src = "assets/voice.svg";
+            recordingImg.setAttribute("fill", "#54656f");
             newmsg();
         });
 
         recognition.start();
     });
+
+    const sendBtn = document.getElementById('send');
+    sendBtn.addEventListener('click', function() {
+        sendBtn.style.display = 'none';
+        document.getElementById("click_to_record").style.display = "block";
+    });
+
+    const input = document.getElementById('input');
+    input.addEventListener('input', function() {
+        if (this.value.trim() !== '') {
+            document.getElementById("send").style.display = "block";
+            document.getElementById("click_to_record").style.display = "none";
+        }
+        else {
+            document.getElementById("send").style.display = "none";
+            document.getElementById("click_to_record").style.display = "block";
+        }
+    });
+
+
 });
 
-var chat;
+var chat = document.getElementById('chat');
 
 
+const resizeOps = () => {
+    document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+    console.log("viewport")
+};
+
+resizeOps();
+window.addEventListener("resize", resizeOps);
 
 newmsg = () => {
     const d = new Date();
@@ -96,7 +123,7 @@ function response(mensagem){
             break;
         case "projects":
         case "projetos":
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>Projetos:<br><br><strong>Officium</strong><br><strong>Trashseeker</strong></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>Projetos:<br><br><strong>Officium</strong> - uma aplicação que tem como objetivo trazer mão-de-obra jovem para Portugal, principalmente para as zonas rurais, com foco na área da tecnologia.<br><br><strong>Trashseeker</strong> - um jogo online que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas.<br><br>Envia uma mensagem com o nome do projeto para mais detalhes!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
         case "officium":
             document.getElementById("officium").style.display = "flex";
