@@ -14,7 +14,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 body{
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(#00A884 0%, #00A884 127px, var(--fundo) 127px, #d2d8dc 100%);
     overflow: hidden;
 }
@@ -565,7 +565,7 @@ button[type="submit"]{
         background-color: white;
         border-radius: 0 25px 25px 0;
     }
-    .container{
+    .container,body{
         width: 100%;
         top: 0;
         height: calc(var(--vh, 1vh) * 100);
