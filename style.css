@@ -435,10 +435,10 @@ body{
     align-items: center;
 }
 
-.chatbox_input .icon{
+.chatbox_input svg{
     cursor: pointer;
-    height: 22px;
-    width: 22px;
+    height: 26px;
+    width: 26px;
 }
 
 .chatbox_input .voice{
@@ -450,14 +450,21 @@ svg{
     cursor: pointer;
 }
 
-.chatbox_input svg:nth-child(1) {
+.chatbox_input span:nth-child(1) {
     margin: 20px;
+}
+
+.chatbox_input span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
 }
 
 
 .chatbox_input input{
     position: relative;
-    width: 90%;
+    flex: 1;
     height: 44px;
     margin: 0 20px;
     padding: 10px 20px;
@@ -486,6 +493,8 @@ svg{
 
 #send{
     display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 button[type="submit"]{
@@ -529,12 +538,28 @@ button[type="submit"]{
     .chatbox_input{
         background-color: transparent;
     }
+    .chatbox_input input{
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 0;
+        order: -1;
+    }
+    .chatbox_input span:nth-child(1){
+        padding: 10px;
+        border-radius: 25px 0 0 25px;
+        background-color: white;
+        margin: 0 0 0 10px;
+        order: -1;
+    }
+    .chatbox_input span:nth-child(2){
+        padding: 10px;
+        background-color: white;
+        border-radius: 0 25px 25px 0;
+    }
     .container{
         width: 100%;
-        /*height: calc(100vh - 56px);
-        overflow: auto;*/
         top: 0;
-        height: calc(var(--vh, 1vh) * 100);
+        height: 100vh;
     }
     .message p{
         max-width: 85%;
@@ -544,10 +569,12 @@ button[type="submit"]{
     .chatbox{
         padding: 20px 20px 0 20px;
     }
-    .nav_icons svg, #send svg{
+    .nav_icons svg, #send svg, .voice{
         fill: white;
+        margin: 0 !important;
     }
-    #send,.voice{
+    #send, .voice_span{
+        margin: 0 10px 0 10px;
         background-color: var(--verde);
         border-radius: 25px;
         height: 44px;
@@ -565,11 +592,3 @@ button[type="submit"]{
 
 
 
-
-
-
-
-
-#officium{
-    display: none;
-}

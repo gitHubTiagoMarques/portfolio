@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         recognition.interimResults = true;
 
-        const recordingImg = document.getElementById("click_to_record");
-        recordingImg.setAttribute("fill", "red");
+        const recordingImg = document.getElementsByClassName("voice")[0];
+        recordingImg.setAttribute("fill", "#FF0000");
 
         recognition.addEventListener('result', e => {
             const transcript = Array.from(e.results)
@@ -50,18 +50,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const sendBtn = document.getElementById('send');
     sendBtn.addEventListener('click', function() {
         sendBtn.style.display = 'none';
-        document.getElementById("click_to_record").style.display = "block";
+        document.getElementById("click_to_record").style.display = "flex";
     });
 
     const input = document.getElementById('input');
     input.addEventListener('input', function() {
         if (this.value.trim() !== '') {
-            document.getElementById("send").style.display = "block";
+            document.getElementById("send").style.display = "flex";
             document.getElementById("click_to_record").style.display = "none";
         }
         else {
             document.getElementById("send").style.display = "none";
-            document.getElementById("click_to_record").style.display = "block";
+            document.getElementById("click_to_record").style.display = "flex";
         }
     });
 
@@ -73,7 +73,6 @@ var chat = document.getElementById('chat');
 
 const resizeOps = () => {
     document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
-    console.log("viewport")
 };
 
 resizeOps();
@@ -123,7 +122,8 @@ function response(mensagem){
             break;
         case "projects":
         case "projetos":
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>Projetos:<br><br><strong>Officium</strong> - uma aplicação que tem como objetivo trazer mão-de-obra jovem para Portugal, principalmente para as zonas rurais, com foco na área da tecnologia.<br><br><strong>Trashseeker</strong> - um jogo online que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas.<br><br>Envia uma mensagem com o nome do projeto para mais detalhes!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>Projetos:<br><br><strong>Koru</strong> (em desenvolvimento) - aplicação multi-plataforma que foca na dinâmica de votação em eventos e permite a organizadores criarem e gerirem os eventos via web a aos participantes votar em projetos exibidos no evento via aplicaçãp mobile.<br><br><strong>Officium</strong> - uma aplicação que tem como objetivo trazer mão-de-obra jovem para Portugal, principalmente para as zonas rurais, com foco na área da tecnologia.<br><br><strong>Trashseeker</strong> - um jogo online que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas.<br><br><strong>Zetflicks</strong> - consiste num site responsivo onde o utilizador pode encontrar novos filmes e series, ver alguns detalhes sobre eles e adicioná-los à sua Watchlist.<br><br>Envia uma mensagem com o nome do projeto para mais detalhes!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = 'Projetos:...';
             break;
         case "officium":
             document.getElementById("officium").style.display = "flex";
