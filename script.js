@@ -125,16 +125,20 @@ function response(mensagem){
             chat.innerHTML += '<div class="message user_message">\n' + '<p><span>Projetos:<br><br><strong>Koru</strong> (em desenvolvimento) - aplicação multi-plataforma que foca na dinâmica de votação em eventos e permite a organizadores criarem e gerirem os eventos via web a aos participantes votar em projetos exibidos no evento via aplicaçãp mobile.<br><br><strong>Officium</strong> - uma aplicação que tem como objetivo trazer mão-de-obra jovem para Portugal, principalmente para as zonas rurais, com foco na área da tecnologia.<br><br><strong>Trashseeker</strong> - um jogo online que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas.<br><br><strong>Zetflicks</strong> - consiste num site responsivo onde o utilizador pode encontrar novos filmes e series, ver alguns detalhes sobre eles e adicioná-los à sua Watchlist.<br><br>Envia uma mensagem com o nome do projeto para mais detalhes!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             document.getElementById("notification").innerText = 'Projetos:...';
             break;
+        case "koru":
+            break;
         case "officium":
-            document.getElementById("officium").style.display = "flex";
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Officium</strong> - 2022<br><br>Descrição : <br><br>Visual:<br><br><img class="visualImg" src="assets/officium_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/officium/" target="_blank">aqui</a>!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            break;
+        case "trashseeker":
+            break;
+        case "zetflicks":
+            break;
         case "curriculo":
         case "currículo":
             break;
         case "contact":
         case "contacto":
-            break;
-        case "almoço":
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><img style="width: 300px" src="assets/dominoes.png"></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
     }
     chat.scrollTop = chat.scrollHeight;
