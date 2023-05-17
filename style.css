@@ -176,8 +176,6 @@ body{
 
 .searchChat .searchIcon{
     margin: 0 30px 0 15px;
-    height: 14px;
-    width: 20px;
 }
 
 .searchChat .searchBar{
@@ -196,6 +194,7 @@ body{
     outline: none;
     border: none;
     border-radius: 8px;
+    text-overflow: ellipsis;
 }
 
 .searchChat .filter{
@@ -589,7 +588,30 @@ button[type="submit"]{
         height: 44px;
         width: 44px;
     }
+    .recording{
+        fill: lightgreen !important;
+    }
 }
+
+@media only screen and (min-width: 768px) {
+    .recording {
+        fill: red !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

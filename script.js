@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         recognition.interimResults = true;
 
         const recordingImg = document.getElementsByClassName("voice")[0];
-        recordingImg.setAttribute("fill", "#FF0000");
+        recordingImg.classList.add("recording");
 
         recognition.addEventListener('result', e => {
             const transcript = Array.from(e.results)
@@ -40,12 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         recognition.addEventListener('end', () => {
-            recordingImg.setAttribute("fill", "#54656f");
+            recordingImg.classList.remove("recording");
             newmsg();
         });
 
         recognition.start();
     });
+
 
     const sendBtn = document.getElementById('send');
     sendBtn.addEventListener('click', function() {
@@ -111,10 +112,22 @@ function response(mensagem){
             document.getElementById("notification").innerText = 'Lista de comandos:...';
             break;
         case "corno":
+            let img1 = new Image();
+            img1.onload = function() {
+                chat.scrollTop = chat.scrollHeight;
+            };
+            img1.src = "assets/officium_visual.JPG";
             chat.innerHTML += '<div class="message user_message">\n' + '<p><span><img style="width: 300px" src="assets/corno.jpg"></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
+        case "shrek attack":
+            let img = new Image();
+            img.onload = function() {
+                chat.scrollTop = chat.scrollHeight;
+            };
+            img.src = "assets/shrekAttack.jpg";
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><img style="width: 300px" src="assets/shrekAttack.jpg"></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            break;
         case "perfil":
-
             break;
         case "skills":
             break;
@@ -125,6 +138,11 @@ function response(mensagem){
         case "koru":
             break;
         case "officium":
+            let img2 = new Image();
+            img2.onload = function() {
+                chat.scrollTop = chat.scrollHeight;
+            };
+            img2.src = "assets/officium_visual.JPG";
             chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Officium</strong> - 2022<br><br>Descrição : <br><br>Visual:<br><br><img class="visualImg" src="assets/officium_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/officium/" target="_blank">aqui</a>!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
         case "trashseeker":
