@@ -114,12 +114,26 @@
 
         </div>
         <div class="header">
-            <div class="imgtext">
-                <div class="userimg">
-                    <img src="assets/tiago.jpg" class="cover">
+            <div class="dropdown">
+                <div onclick="myFunction(event)" class="imgtext dropbtn">
+                    <div class="userimg">
+                        <img src="assets/tiago.jpg" class="cover">
+                    </div>
+                    <p>Tiago Marques<br><span>online</span></p>
                 </div>
-                <p>Tiago Marques<br><span>online</span></p>
+                <div id="myDropdown" class="dropdown-content">
+                    <div>
+                        <p>21 anos</p>
+                        <p>Aveiro, Portugal</p>
+                    </div>
+                    <div class="social">
+                        <a href="https://github.com/gitHubTiagoMarques" target="_blank"><img title="Github" alt="github" class="icon" src="assets/github.png"></a>
+                        <a href="https://www.linkedin.com/in/tiago-marques-506124180/" target="_blank"><img title="Linkedin" alt="linkedin" class="icon" src="assets/linkedin.png"></a>
+                    </div>
+
+                </div>
             </div>
+
         <ul class="nav_icons">
             <li><svg height="24" width="24" fill="#54656f" viewBox="0 0 24 24">
                 <path d="M15.9,14.3H15L14.7,14c1-1.1,1.6-2.7,1.6-4.3c0-3.7-3-6.7-6.7-6.7S3,6,3,9.7 s3,6.7,6.7,6.7c1.6,0,3.2-0.6,4.3-1.6l0.3,0.3v0.8l5.1,5.1l1.5-1.5L15.9,14.3z M9.7,14.3c-2.6,0-4.6-2.1-4.6-4.6s2.1-4.6,4.6-4.6 s4.6,2.1,4.6,4.6S12.3,14.3,9.7,14.3z"/>
@@ -132,7 +146,7 @@
 
         <div id="chat" class="chatbox">
             <div class="message user_message">
-                <p><span>Bem-vindo ao meu portefólio interativo!<br><br> Como web developer sempre à procura de inovação, decidi criar algo que vai para além do tradicional. Inspirado pela popularidade do chatGPT, criei um chat WhatsApp comigo mesmo para que possas explorar os meus projetos e competências de uma forma única. Como utilizador ávido do WhatsApp, esta ideia veio-me naturalmente à mente. Com respostas pré-programadas, o chat permite-te saber mais sobre mim e sobre o meu percurso. Espero que desfrutes desta experiência única de navegar através do meu portfólio.<br><br>Envia uma mensagem com "<strong>comandos</strong>" para uma lista dos comandos disponíveis ou esperimenta a funcionalidade voz para texto clicando no microfone!</span><span id="hora" class="hour">23:50</span></p>
+                <p><span>Bem-vindo ao meu portefólio interativo!<br><br> Como web developer sempre à procura de inovação, decidi criar algo que vai para além do tradicional. Inspirado pela popularidade do chatGPT, criei um chat WhatsApp comigo mesmo para que possas explorar os meus projetos e competências de uma forma única. Como utilizador ávido do WhatsApp, esta ideia veio-me naturalmente à mente. Com respostas pré-programadas, o chat permite-te saber mais sobre mim e sobre o meu percurso. Espero que desfrutes desta experiência única de navegar através do meu portfólio.<br><br>Envia uma mensagem com "<strong>comandos</strong>" para uma lista dos comandos disponíveis ou experimenta a funcionalidade voz para texto clicando no microfone!</span><span id="hora" class="hour">23:50</span></p>
             </div>
         </div>
         <form onsubmit="newmsg()">
