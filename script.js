@@ -108,34 +108,27 @@ function response(mensagem){
     chat = document.getElementById('chat');
     switch (mensagem){
         case "comandos":
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>Lista de comandos:<br><br>"<strong>Perfil</strong>" - Aprende mais sobre mim<br>"<strong>Skills</strong>" - As minhas qualificações<br>"<strong>Projetos</strong>" - Projetos que desenvolvi ou estive envolvido<br>"<strong>Currículo</strong>" - Acesso ao meu currículo<br>"<strong>Contacto</strong>" - Como me contactar</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
-            document.getElementById("notification").innerText = 'Lista de comandos:...';
-            break;
-        case "corno":
-            let img1 = new Image();
-            img1.onload = function() {
-                chat.scrollTop = chat.scrollHeight;
-            };
-            img1.src = "assets/officium_visual.JPG";
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><img style="width: 300px" src="assets/corno.jpg"></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
-            break;
-        case "shrek attack":
-            let img = new Image();
-            img.onload = function() {
-                chat.scrollTop = chat.scrollHeight;
-            };
-            img.src = "assets/shrekAttack.jpg";
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><img style="width: 300px" src="assets/shrekAttack.jpg"></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.comandos{<br><br><strong>Perfil</strong> : aprende mais sobre mim<br><strong>Skills</strong> : as minhas qualificações<br><strong>Projetos</strong> : projetos que desenvolvi<br><strong>Currículo</strong> : acesso ao meu currículo<br><strong>Contacto</strong> : como me contactar<br><br>}</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = '.comandos{...';
             break;
         case "perfil":
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.perfil{<br><br><strong>Perfil</strong> : aprende mais sobre mim<br><strong>Skills</strong> : as minhas qualificações<br><strong>Projetos</strong> : projetos que desenvolvi<br><strong>Currículo</strong> : acesso ao meu currículo<br><strong>Contacto</strong> : como me contactar<br><br>}</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = '.perfil{...';
             break;
         case "skills":
             break;
         case "projetos":
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>Projetos:<br><br><strong>Koru</strong> (em desenvolvimento) - aplicação multi-plataforma que foca na dinâmica de votação em eventos e permite a organizadores criarem e gerirem os eventos via web a aos participantes votar em projetos exibidos no evento via aplicaçãp mobile.<br><br><strong>Officium</strong> - uma aplicação que tem como objetivo trazer mão-de-obra jovem para Portugal, principalmente para as zonas rurais, com foco na área da tecnologia.<br><br><strong>Trashseeker</strong> - um jogo online que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas.<br><br><strong>Zetflicks</strong> - consiste num site responsivo onde o utilizador pode encontrar novos filmes e series, ver alguns detalhes sobre eles e adicioná-los à sua Watchlist.<br><br>Envia uma mensagem com o nome do projeto para mais detalhes!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
-            document.getElementById("notification").innerText = 'Projetos:...';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.projetos{<br><br><strong>Koru</strong> : aplicação multi-plataforma que foca na dinâmica de votação em eventos e permite a organizadores criarem e gerirem os eventos via web e aos participantes votarem em projetos exibidos no evento via aplicação mobile.<br><br><strong>Officium</strong> : uma aplicação que tem como objetivo trazer mão-de-obra jovem para Portugal, principalmente para as zonas rurais, com foco na área da tecnologia.<br><br><strong>Trashseeker</strong> : um jogo online que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas.<br><br><strong>Zetflicks</strong> : consiste num site responsivo onde o utilizador pode encontrar novos filmes e series, ver alguns detalhes sobre eles e adicioná-los à sua Watchlist.<br><br>}<br><br>Envia uma mensagem com o nome do projeto para mais detalhes!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = '.projetos{...';
             break;
         case "koru":
+            let img1 = new Image();
+            img1.onload = function() {
+                chat.scrollTop = chat.scrollHeight;
+            };
+            img1.src = "assets/koru_visual.JPG";
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Koru</strong> - 2023<br><br>Principal tecnologia: <i>React.js & React Native</i><br><br>Descrição: <br><br>Koru é uma aplicação multi-plataforma que foca na dinâmica de votação em eventos. Esta permite aos organizadores criarem e gerirem os eventos via web e aos participantes votarem em projetos exibidos no evento via aplicação mobile..<br><br>Visual:<br><br><img class="visualImg" style="object-fit: cover" src="assets/koru_visual.JPG"><br><br>Em desenvolvimento...</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = 'Koru...';
             break;
         case "officium":
             let img2 = new Image();
@@ -143,16 +136,33 @@ function response(mensagem){
                 chat.scrollTop = chat.scrollHeight;
             };
             img2.src = "assets/officium_visual.JPG";
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Officium</strong> - 2022<br><br>Descrição : <br><br>Visual:<br><br><img class="visualImg" src="assets/officium_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/officium/" target="_blank">aqui</a>!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Officium</strong> - 2022<br><br>Principal tecnologia: <i>React.js</i><br><br>Descrição: <br><br>Visual:<br><br><img class="visualImg" src="assets/officium_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/officium/" target="_blank">aqui</a></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
         case "trashseeker":
+            let img3 = new Image();
+            img3.onload = function() {
+                chat.scrollTop = chat.scrollHeight;
+            };
+            img3.src = "assets/trashseeker_visual.jpg";
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Trashseeker</strong> - 2021<br><br>Principal tecnologia: <i>Javascript</i><br><br>Descrição: <br><br>Visual:<br><br><img class="visualImg" src="assets/trashseeker_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/trashseeker/" target="_blank">aqui</a></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
         case "zetflicks":
+            let img4 = new Image();
+            img4.onload = function() {
+                chat.scrollTop = chat.scrollHeight;
+            };
+            img4.src = "assets/zetflicks_visual.jpg";
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Zetflicks</strong> - 2023<br><br>Principal tecnologia - <i>React.js</i><br><br>Descrição: <br><br>Zetflicks é um pequeno projeto desenvolvido por 3 estudantes universitários da Universidade de Aveiro com o objetivo de se tornarem mais experientes em novas linguagens de programação e uso de API. O projeto consiste num site responsivo onde o utilizador pode encontrar novos filmes e series, ver alguns detalhes sobre eles e adicioná-los à sua Watchlist.<br><br>Visual:<br><br><img class="visualImg" src="assets/zetflicks_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/trashseeker/" target="_blank">aqui</a></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
         case "curriculo":
         case "currículo":
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.currículo{<br><br>Abrir num novo separador : <a><u onclick="openPDF()" style="cursor:pointer"><strong>abrir</strong></u></a><br>Fazer download : <a style="text-decoration: none" href="assets/cv.pdf" download><u><strong>download</strong></u></a><br><br>}</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = 'Lista de comandos:...';
             break;
+        case "contato":
         case "contacto":
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.contacto{<br><br><strong>Email</strong> : <a href="mailto:al.tiagosoares@gmail.com">al.tiagosoares@gmail.com</a><br><br><strong>Telemóvel</strong> : <a href="tel:+351914042276">+351 914042276</a><br><br><strong>LinkedIn</strong> : <a href="https://www.linkedin.com/in/tiago-marques-506124180/" target="_blank">tiago-marques</a><br><br><strong>Github</strong> : <a href="https://github.com/gitHubTiagoMarques" target="_blank">GitHubTiagoMarques</a><br><br>}</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = '.contacto{...';
             break;
     }
     chat.scrollTop = chat.scrollHeight;
@@ -167,9 +177,6 @@ function chatClick (){
 }
 
 
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
 function myFunction(event) {
     event.stopPropagation();
     document.getElementById("myDropdown").classList.toggle("show");
@@ -184,3 +191,25 @@ window.onclick = function() {
         }
     }
 };
+
+function openPDF() {
+    window.open('assets/cv.pdf', '_blank');
+}
+
+
+window.addEventListener('load', function() {
+    var loadingScreen = document.getElementById('loading-screen');
+    var loadingBar = document.getElementById('loading-bar');
+    var width = 0;
+    var interval = setInterval(function() {
+        if (width >= 60) {
+            clearInterval(interval);
+            loadingScreen.style.opacity = 0;
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 1000);
+        }
+        width += 1;
+        loadingBar.style.width = width + '%';
+    }, 30);
+});
