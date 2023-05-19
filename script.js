@@ -127,7 +127,7 @@ function response(mensagem){
                 chat.scrollTop = chat.scrollHeight;
             };
             img1.src = "assets/koru_visual.jpg";
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Koru</strong> - 2023<br><br>Principal tecnologia: <i>React.js & React Native</i><br><br>Descrição: <br><br>Koru é uma aplicação multi-plataforma que foca na dinâmica de votação em eventos. Esta permite aos organizadores criarem e gerirem os eventos via web e aos participantes votarem em projetos exibidos no evento via aplicação mobile..<br><br>Visual:<br><br><img class="visualImg" style="object-fit: cover" src="assets/koru_visual.JPG"><br><br>Em desenvolvimento...</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Koru</strong> - 2023<br><br>Principal tecnologia: <i>React.js & React Native</i><br><br>Descrição: <br><br>Koru é uma aplicação multi-plataforma que foca na dinâmica de votação em eventos. Esta permite aos organizadores criarem e gerirem os eventos via web e aos participantes votarem em projetos exibidos no evento via aplicação mobile..<br><br>Visual:<br><br><img class="visualImg" style="object-fit: cover" src="assets/koru_visual.jpg"><br><br>Em desenvolvimento...</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             document.getElementById("notification").innerText = 'Koru...';
             break;
         case "officium":
