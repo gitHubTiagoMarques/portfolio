@@ -116,6 +116,8 @@ function response(mensagem){
             document.getElementById("notification").innerText = '.perfil{...';
             break;
         case "skills":
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.skills{<br><br><span class="texto_barras"><strong>Design Gráfico:</strong>80%</span><br><progress value="80" max="100"></progress><br><span class="texto_barras"><strong>Design UI/UX:</strong>80%</span><br><progress value="80" max="100"></progress><br><span class="texto_barras"><strong>HTML / CSS:</strong>90%</span><br><progress value="90" max="100"></progress><br><span class="texto_barras"><strong>Bootstrap:</strong>85%</span><br><progress value="85" max="100"></progress><br><span class="texto_barras"><strong>React.js:</strong>85%</span><br><progress value="85" max="100"></progress><br><span class="texto_barras"><strong>React Native:</strong>75%</span><br><progress value="75" max="100"></progress><br><span class="texto_barras"><strong>PHP:</strong>75%</span><br><progress value="75" max="100"></progress><br><span class="texto_barras"><strong>MySQL:</strong>75%</span><br><progress value="75" max="100"></progress><br><br>}</span><span class="hour">' + horas.substring(0, 5) + '</span></p>\n' + '</div>';
+            document.getElementById("notification").innerText = '.skills{...';
             break;
         case "projetos":
             chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.projetos{<br><br><strong>Koru</strong> : aplicação multi-plataforma que foca na dinâmica de votação em eventos e permite a organizadores criarem e gerirem os eventos via web e aos participantes votarem em projetos exibidos no evento via aplicação mobile.<br><br><strong>Officium</strong> : uma aplicação que tem como objetivo trazer mão-de-obra jovem para Portugal, principalmente para as zonas rurais, com foco na área da tecnologia.<br><br><strong>Trashseeker</strong> : um jogo online que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas.<br><br><strong>Zetflicks</strong> : consiste num site responsivo onde o utilizador pode encontrar novos filmes e series, ver alguns detalhes sobre eles e adicioná-los à sua Watchlist.<br><br>}<br><br>Envia uma mensagem com o nome do projeto para mais detalhes!</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
@@ -144,7 +146,7 @@ function response(mensagem){
                 chat.scrollTop = chat.scrollHeight;
             };
             img3.src = "assets/trashseeker_visual.jpg";
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Trashseeker</strong> - 2021<br><br>Principal tecnologia: <i>Javascript</i><br><br>Descrição: <br><br>Visual:<br><br><img class="visualImg" src="assets/trashseeker_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/trashseeker/" target="_blank">aqui</a></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span><strong>Trashseeker</strong> - 2021<br><br>Principal tecnologia: <i>Javascript</i><br><br>Descrição:<br><br>Trashseeker é um jogo singleplayer que tem como objetivo sensibilizar as gerações mais novas para as alterações climáticas. Foi desenvolvido após a minha primeira interacção com javascript e é um teste a algumas das técnicas aprendidas. <br><br>Visual:<br><br><img class="visualImg" src="assets/trashseeker_visual.JPG"><br><br>Explora a demo <a href="https://githubtiagomarques.github.io/trashseeker/" target="_blank">aqui</a></span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             break;
         case "zetflicks":
             let img4 = new Image();
@@ -211,5 +213,5 @@ window.addEventListener('load', function() {
         }
         width += 1;
         loadingBar.style.width = width + '%';
-    }, 30);
+    }, 5);
 });
