@@ -112,7 +112,7 @@ function response(mensagem){
             document.getElementById("notification").innerText = '.comandos{...';
             break;
         case "perfil":
-            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.perfil{<br><br><strong>Nome</strong> : Tiago Marques Soares<br><strong>Idade</strong> : 21<br><br><strong>Biografia</strong> : Web developer & designer, licenciado na Universidade de Aveiro, no curso de Multimédia e tecnologias da comunicação, tenho experiência no que toca a trabalhar em equipa e procuro sempre destacar os meus projetos de forma inovadora face à concorrência. Trabalho de forma descontraída, mas profissional, e sou muito comunicativo.<br><br><strong>Hobbies</strong> : jogar futsal, jogar video-jogos, ver anime, ler manga, passear, ouvir música, etc...<br><br>}</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
+            chat.innerHTML += '<div class="message user_message">\n' + '<p><span>.perfil{<br><br><strong>Nome</strong> : Tiago Marques Soares<br><strong>Idade</strong> : 23<br><br><strong>Biografia</strong> : Web developer & designer, licenciado na Universidade de Aveiro, no curso de Multimédia e tecnologias da comunicação, tenho experiência no que toca a trabalhar em equipa e procuro sempre destacar os meus projetos de forma inovadora face à concorrência. Trabalho de forma descontraída, mas profissional, e sou muito comunicativo.<br><br><strong>Hobbies</strong> : jogar futsal, jogar video-jogos, ver anime, ler manga, passear, ouvir música, etc...<br><br>}</span><span class="hour">'+ horas.substring(0,5) + '</span></p>\n' + '</div>';
             document.getElementById("notification").innerText = '.perfil{...';
             break;
         case "skills":
